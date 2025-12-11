@@ -1,0 +1,39 @@
+#For myapi project of Laravel
+myapi/node_modules
+myapi/public/hot
+myapi/public/storage
+myapi/storage/*.key
+myapi/vendor
+myapi/.env
+myapi/.env.backup
+myapi/.phpunit.result.cache
+myapi/docker-compose.override.yml
+myapi/Homestead.json
+myapi/Homestead.yaml
+myapi/npm-debug.log
+myapi/yarn-error.log
+myapi/.idea
+myapi/.vscode
+
+#For myapp project of JS
+# dependencies
+myapp/node_modules
+myapp//.pnp
+myapp/.pnp.js
+
+# testing
+myapp/coverage
+
+# production
+myapp/build
+
+# misc
+myapp/.DS_Store
+myapp/.env.local
+myapp/.env.development.local
+myapp/.env.test.local
+myapp/.env.production.local
+
+myapp/npm-debug.log*
+myapp/yarn-debug.log*
+myapp/yarn-error.log*
