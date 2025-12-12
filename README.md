@@ -1,6 +1,6 @@
 # React and Laravel Login, Registration, Logout and CRUD operation
 
-Login, Registration, Logout and CRUD operation with React and Laravel.
+Login, Registration, Logout and CRUD operation with React, Laravel REST API (Sanctum).
 ## Project Details
 
 - **GitHub Repository**: [https://github.com/shohag-cse-knu/auth_crud_react_laravel.git](https://github.com/shohag-cse-knu/auth_crud_react_laravel.git)
@@ -10,15 +10,16 @@ Login, Registration, Logout and CRUD operation with React and Laravel.
 - **Employee List**: Shows all Employees.
 - **Add Employee**: Adding employee with name, email, and password.
 - **Edit Employee**: Updating employee with name, email, and password.
-- **Delete Product**: Deleting a employee.
+- **Delete Product**: Deleting an employee.
 
 ## Prerequisites
 
-- **Laravel**: 
-- **PHP**:
-- **MySQL**
-- **Composer**: 
-- **NodeJS**:
+- **Laravel**: Laravel Framework 12.42.0 
+- **PHP**: PHP 8.2.12
+- **MySQL**: MariaDB 10.4.32
+- **Composer**: Composer version 2.9.2
+- **NodeJS**: v24.12.0
+- **React**: 19.2.2
 
 ## Setup Instructions
 
@@ -77,7 +78,7 @@ npm start
 ## Technologies Used
 
 - **Frontend**: ReactJS
-- **Backend**: Laravel REST API, MySql
+- **Backend**: Laravel REST API (Sanctum), MySql
 
 ## To Login check DatabaseSeeder.php and UserFactory.php
 
