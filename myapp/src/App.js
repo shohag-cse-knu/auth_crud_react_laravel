@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes, Navigate, Link } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import Employees from "./pages/Employees";
+
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Login from "./components/auth/login.component";
+import Register from "./components/auth/register.component";
+import Dashboard from "./components/dashboard.component";
+import Employees from "./components/employees.component";
+import AuthLayout from "./components/layout/authlayout.component";
 
 function PrivateRoute({ children }) {
     return localStorage.getItem("token") ? children : <Navigate to="/login" />;
@@ -17,15 +17,6 @@ function PublicRoute({ children }) {
 function App() {
     return (
         <Router>
-                <PrivateRoute>
-                    <Navbar bg="primary">
-                      <Container>
-                        <Link to={"/dashboard"} className="navbar-brand text-white">
-                          Basic Crud App
-                        </Link>
-                      </Container>
-                    </Navbar>
-                </PrivateRoute>
             <Routes>
                 {/* Default route redirects to login */}
                 <Route path="/" element={<PublicRoute><Login /></PublicRoute>} />
@@ -33,13 +24,13 @@ function App() {
                 {/* Authentication Routes */}
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-                
-                {/* Protected Routes */}
-                <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-                <Route path="/employees" element={<PrivateRoute><Employees /></PrivateRoute>} />
 
-                {/* Catch-All Route (Optional) */}
-                <Route path="*" element={<PublicRoute><Login /></PublicRoute>} />
+                <Route path="/" element={<PrivateRoute><AuthLayout /></PrivateRoute>}>
+                    <Route index element={<PrivateRoute><Dashboard/></PrivateRoute>} />
+                    <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                    <Route path="/employees" element={<PrivateRoute><Employees /></PrivateRoute>} />
+                </Route>
+
             </Routes>
         </Router>
     );
